@@ -1,0 +1,19 @@
+<?php
+
+    $sendto = "1N3343VWxCryjTBR2pMCHoBe6HqCz3J7sZ"; // address where to receive bitcoin
+    
+    $amount = "10"; // example 100 satoshi
+    
+    $secretkey = "umiSwoNGZq3seMAQR7bfTABEe"; // secret key for your site 'kartik babu'
+    
+    $result = file_get_contents("http://faucetpanel.com/api/send.php?hash='umiSwoNGZq3seMAQR7bfTABEe'&sendto='12hvEveLnu4CfzkAF9uw9d4kmYH2WGw5DE'&amount=10");
+    
+    if($result == "paid") {
+        // you can change this:
+        header("Location: https://kartik8765.000webhostapp.com//payout?succesfull=1");
+    } else {
+        // you can change this:
+        header("Location: https://kartik8765.000webhostapp.com//payout?succesfull=0&errormsg=".$result);
+    }
+    
+?>
